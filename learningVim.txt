@@ -1,0 +1,157 @@
+Thank you for attending the Vim workshop! This file is used to help teach you the basics regarding the Vim editor. 
+
+To navigate throughout the file, you can use the arrow keys. However this is inefficient. We will go over navigation commands later.
+These navigation commands will make editing your file easier. 
+
+If you haven't received a document regarding Vim during the workshop, I will copy and paste the details down below.
+This file's purpose is to let you play around with both Vim navigation, editing, and pattern recognition tools. Jump to line 124 to get to the "playground" area of this file. 
+NOTE: If you are unfamiliar with line jumping, read through the Navigating through the Vim editor section in this file. Don't worry, I'll also go over it if you're reading ahead. 
+
+If you want to see line numbers, type in ":set nu" (without quotation marks) to see the line numbers on the left hand side of your editor. 
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Creating and saving files in Vim
+
+In a terminal, to create a file using vim, type: vim “filename” (replace “filename” with the actual filename).
+
+:w – save current file, but stay in the vim editor
+
+:x – save current file and exit out of vim
+
+:q! – do not save current file and exit out of vim
+
+:saveas file – save the file you are working on under a different name than what was accessed.
+
+Navigating through the Vim editor
+
+You cannot move and select text via your mouse. Vim uses the keyboard by default to move around the editor. This is because when you type, you want to keep your hands on the keyboards and away from the mouse in order to improve productivity.
+
+You can navigate using the arrow keys
+•	Left and right arrows to move one character in selected direction
+•	Up and down arrows to move one line in selected direction
+Else, there are other ways to navigate through Vim (in a more efficient manner perhaps)
+
+w – jump forwards to the start of a word (W does the same, but for words with punctuation).
+
+e – jump forwards to the end of a word (E does the same, but for words with punctuation).
+
+b – jump backwards to the start of a word (B does the same, but for words with punctuation).
+
+0 – jump to the start of the line (0 is zero)
+
+$ - jump to the end of the line
+
+gg – go to the first line of the document
+
+G – go to the last line of the document
+
+nG – go to line n (replace n with the line number you wish to go to. This is useful for quickly finding the line with an error when compiling).
+
+/pattern – search for a pattern (find a word) in your file
+•	n traverses to the next found pattern
+•	N traverses to the previous found pattern
+
+Editing a file in Vim
+Insertion mode
+
+	You have now learned how to navigate through a file and hopefully have seen how quick moving throughout Vim is compared to a graphical text editor. The same can be done for inserting and replacing words throughout Vim.
+
+i – insert before the cursor
+
+I – insert at the beginning of the line
+
+a – insert after the cursor
+
+A – insert at the end of the line
+
+o – append a new line below the current line
+
+O – append a new line above the current line
+
+ea – insert at the end of the word (the word the cursor is at)
+
+	To exit insertion mode, press the Esc key. This will bring you back into the normal mode (navigation).
+
+Normal mode
+	In the normal (not insertion) mode you may also replace characters, words, undo a change, redo a change, and copy/paste lines.
+
+r – replace a single character where the cursor is at (after pressing r where the cursor is, you must type in the text you’d like to replace it with).
+
+u – undo
+
+Ctrl + r – redo
+
+. – repeat last command
+
+:%s/old/new/g(c) – replace all words that match the pattern “old” with the word “new” (if c is added after g, this allows you to confirm each swap).
+
+nyy – copy n lines (replace n with the number of lines you’d like to copy)
+
+yw – copy the word from the cursor position to the end of said word
+
+p – paste what is in your vim clipboard after your cursor
+
+P – paste what is in your vim clipboard before your cursor
+
+ndd – cut n lines
+
+dw – cut the characters of the word from the cursor position to the end of the word
+
+D – cut to the end of the line
+
+x – cut the selected character
+
+Workspace
+
+	A feature of vim is to have multiple tabs and multiple windows for each tab, so that you can create a workspace that works best for you.
+
+:tabe filename – create a new tab with the filename to open
+
+gt – move to the next tab
+
+gT – move to the previous tab
+
+ngt – move to tab number n
+
+:split filename – create a second window horizontally to show filename (in this tab)
+
+:vsplit filename – same as split but a vertical window
+
+To navigate through split frames, to go to the next one, you type Ctrl + w twice.
+
+---------------------------------------------------------------------------------------------------------------------------------
+
+PLAYGROUND AREA
+
+The sentence below has a few typos. Use the replace (r) command to fix it. 
+
+Tha quick bRown fox jumped over thw laze dog. 
+
+Write your name on the line below using the line append (o) command. Do not delete the line of x's. 
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+Use the insert mode to write something here: 
+For more practicality, you should try starting from the first character in the above sentence, and get + enter insertion mode at the end of said sentence (:) with only one key press. 
+
+yank the following lines, and paste them a line after the sequence:
+
+aaaa
+bbbbb
+ccccc
+
+Delete this line.
+Delete after this colon: I am currently a student here at Purdue University. 
+
+Deletee the typo in this sentence, and only through the one extra character (aka, do not delete the entire line or partially delete it. Just only remove the one extra character). 
+
+Delete this line. Then, undelete it (undo it). Then, redo the deletion of the line. 
+
+Highlight the word eiusmod using the /pattern command
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Change sit to sat in the above sentence using only one command. 
+
+Try to open this file in either a tab or a new window! 
+You can close out of the file using the save commands I talked about earlier. 
