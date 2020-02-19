@@ -4,7 +4,7 @@ To navigate throughout the file, you can use the arrow keys. However this is ine
 These navigation commands will make editing your file easier. 
 
 If you haven't received a document regarding Vim during the workshop, I will copy and paste the details down below.
-This file's purpose is to let you play around with both Vim navigation, editing, and pattern recognition tools. Jump to line 124 to get to the "playground" area of this file. 
+This file's purpose is to let you play around with both Vim navigation, editing, and pattern recognition tools. Jump to line 149 to get to the "playground" area of this file. 
 NOTE: If you are unfamiliar with line jumping, read through the Navigating through the Vim editor section in this file. Don't worry, I'll also go over it if you're reading ahead. 
 
 If you want to see line numbers, type in ":set nu" (without quotation marks) to see the line numbers on the left hand side of your editor. 
@@ -119,6 +119,30 @@ ngt – move to tab number n
 :vsplit filename – same as split but a vertical window
 
 To navigate through split frames, to go to the next one, you type Ctrl + w twice.
+
+.Vimrc
+
+	With Vim, you have a file that stores vim settings that is loaded into Vim each time you run Vim. This is known as your vimrc. Your vimrc is located at ~/.vimrc, where ~ references your home directory. The vimrc file can load commands immediately when Vim is executed that normally you’d have to set each time Vim is run. For example, if you want to show lines, without setting it in your vimrc you’d have to type :set nu each time Vim is run. By putting set nu in your vimrc (notice I did not include a colon), this will opt to show lines each time Vim is opened without having to type it in at runtime. 
+
+	To edit your vimrc, run vim ~/.vimrc. 
+
+Here are some useful things to include in your vimrc. 
+
+set nu – shows the corresponding line numbers to the left of each line. 
+
+syntax enable – enables syntax highlighting. Very useful when editing code. 
+
+colorscheme “selectColorschemeHere” – allows you to load a specific colorscheme into your editor. You can install colorschemes at ~/.vim/colors. To see the available colorschemes, on a vim editor, type :colorscheme, then hit space, then hit tab. Do not press enter. 
+
+set smartindent – autoindents your code accordingly to the language the file is written in
+
+set shiftwidth=n – (with n as a number) the number of spaces to shift per indent.
+
+set tabstop=n – the number of spaces to shift per TAB indent. 
+
+NOTE: the shiftwidth applies to a shift either done by >> (shift this text to the right), << (shift to left), or smartindent. Tabstop applies when you hit the TAB button. 
+
+NOTE: if you want to use these commands in the vim editor as a one-time option (in this editor instance only), you add a colon (:). This is how vim knows you are writing a command. 
 
 ---------------------------------------------------------------------------------------------------------------------------------
 
